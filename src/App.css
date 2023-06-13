@@ -1,38 +1,94 @@
+#fondo {
+  background-color: rgb(3, 43, 73);
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.link {
+  margin-left: 60px;
+  color: white;
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cont {
+  position: relative;
+  top: 1%;
+  left: 33%;
+  width: 400px;
+  height: fit-content;
+  background-color: #99DBF5;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cont_ID {
+  width: 210px;
+  background-color: #99DBF5;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
+  top: 20%;
+  left: 37%;
 }
 
-.App-link {
-  color: #61dafb;
+.cont_padre {
+  position: relative;
+  top: 2%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cont_btn_borrar {
+  width: 400px;
+  position: relative;
+  top: 5%;
+  left: 40%;
+}
+
+.lb_borrar {
+  position: relative;
+  top: 40%;
+  width: 210px;
+  height: 60px;
+  background-color: #99DBF5;
+}
+
+.btn_borrar {
+  position: relative;
+  top: 40%;
+  left: 1%;
+  width: 200px;
+  height: 100px;
+}
+
+.container_padre {
+  height: 950px;
+  background-color: #9AC5F4;
+}
+
+.cont_todos_users {
+  width: 400px;
+  position: relative;
+  top: 5%;
+  left: 40%;
+}
+
+.cont_todos_users {
+  position: relative;
+  left: 10%;
+  width: 100%;
+}
+
+.cont_users {
+  width: 100%;
+}
+
+#cont_users {
+  position: absolute;
+
+}
+
+.cont_inicio {
+  position: relative;
+  top: 1%;
+  left: 30%;
 }
