@@ -36,7 +36,10 @@ controladores.Crear_Usuario = async (req, res) => {
 
         let insertar_usuario = await DB_coleccion.insertOne(usuario);
         console.log("id del usuario recien creado " + insertar_usuario.insertedId);
-        res.send({ Creacion: true });
+        res.send({
+            Creacion: true,
+            inserted_id: insertar_usuario.insertedId
+        });
     } catch (error) {
         console.log("Ocurrio un error al crear un usuario" + error);
     }

@@ -32,9 +32,14 @@ function Formulario_Crear_Usuario() {
         console.log(res);
         if (res.Creacion) {
             let anuncio_creacion = document.getElementById("anuncio_creacion");
-            anuncio_creacion.innerHTML = `<h1>Usuario Creado con exito</h1>`
+            anuncio_creacion.innerHTML = `        <h1>El Usuario fue creado con exito</h1>
+            <br /><h3>
+            el id es ${res.inserted_id}
+        </h3>`
+
         }
     }
+
     return (<>
         <div className="cont" id="anuncio_creacion">
 

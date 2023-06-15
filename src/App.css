@@ -69,7 +69,7 @@
   width: 400px;
   position: relative;
   top: 5%;
-  left: 40%;
+  left: 50%;
 }
 
 .cont_todos_users {
@@ -82,13 +82,16 @@
   width: 100%;
 }
 
-#cont_users {
-  position: absolute;
 
-}
 
 .cont_inicio {
   position: relative;
   top: 1%;
+  left: 30%;
+}
+
+.btn_todos_users {
+  height: 100px;
+  position: relative;
   left: 30%;
 }

@@ -1,14 +1,39 @@
 import { useState, useContext } from "react";
 import { APIcontexto } from "../context/contexto_API";
-import Button from 'react-bootstrap/Button';
+import { Table } from "antd";
 
+import Button from 'react-bootstrap/Button';
+let dataSource = []
+const columns = [
+    {
+        title: 'nombre',
+        dataIndex: 'nombre',
+        key: 'nombre',
+    },
+    {
+        title: 'Email',
+        dataIndex: 'Email',
+        key: 'Email',
+    },
+    {
+        title: '_id',
+        dataIndex: '_id',
+        key: '_id',
+    },
+    {
+        title: 'Editandose',
+        dataIndex: 'Editandose',
+        key: 'Editandose',
+    },
+];
 
 
 function Obtener_Usuario() {
     const API = useContext(APIcontexto);
     let [_id, set_id] = useState("");
-
+    const [Btn_clicked, setBtn_clicked] = useState(false);
     async function Handle_Obtener_Usuario() {
+        setBtn_clicked(false)
         let id = document.getElementById("id_input").value;
         set_id(_id = id);
 
@@ -23,23 +48,29 @@ function Obtener_Usuario() {
         })
         let res = await Query_Obtener_Usuario.json();
         localStorage.setItem("id_user", res._id)
-
-        function Plantilla_usuario(_id, nombre, email) {
-            let cont_users = document.getElementById("cont_users")
-            let cont = document.createElement('div');
-            cont.innerHTML = `
-            <br/>
-            <div  class="card" style="width: 18rem;">
-            <ul class="list-group list-group-flush">
-            <li class="list-group-item">${_id}</li>
-            <li class="list-group-item">${nombre}</li></li>
-            <li class="list-group-item">${email}</li>
-            </ul>
-            </div>`;
-            cont_users.appendChild(cont);
+        function btnclick() {
+            setBtn_clicked(true);
+        }
+        setTimeout(() => {
+            btnclick();
+        }, 2000)
+        let res_obj = {
+            key: res._id,
+            _id: res._id,
+            nombre: res.nombre,
+            Email: res.email,
+            Editandose: " "
+        };
+        dataSource.push(res_obj)
+        for (let i = 0; i < dataSource.length; i++) {
+            if (dataSource.length - 1 == i) {
+                dataSource[i].Editandose = "✓";
+            } else {
+                dataSource[i].Editandose = " ";
+            }
 
         }
-        Plantilla_usuario(res._id, res.nombre, res.email);
+        // dataSource[dataSource.length - 1].Editandose = "&#9745;"
     }
     return (
         <>
@@ -57,8 +88,9 @@ function Obtener_Usuario() {
                     <br />
                     <br /><br /><br />
                 </div>
+                <br />
                 <div id="cont_users">
-
+                    {Btn_clicked ? <Table colspan={90} dataSource={dataSource} columns={columns}></Table> : null}
                 </div>
 
             </div>

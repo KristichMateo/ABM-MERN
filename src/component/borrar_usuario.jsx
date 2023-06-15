@@ -27,7 +27,7 @@ function Borrar_Usuario() {
             </div>
             <Button onClick={Handle_Borrar} className='btn_borrar' variant="danger">Borrar Usuario</Button>
             <br /> <br />
-            <label className='lb_borrar' htmlFor="">Documento a borrar: {contexto.IdContexto}</label>
+            <label className='lb_borrar' htmlFor="">Usuario a borrar: {contexto.IdContexto}</label>
 
         </div>
     );

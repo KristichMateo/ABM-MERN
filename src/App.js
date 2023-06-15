@@ -11,7 +11,7 @@ import Formulario_Crear_Usuario from './component/formulario_crear';
 import Modificar_Usuario from "./component/modificar_Usuario";
 import Borrar_Usuario from "./component/borrar_usuario";
 import Todos_Usuarios from "./component/todos_Usuarios";
-import Inicio from "./component/Inicio";
+import Inicio from "./component/Inicio"
 import { UserContext } from "./context/contexto_usuario";
 import { APIcontexto } from "./context/contexto_API";
 import { useContext } from 'react';
